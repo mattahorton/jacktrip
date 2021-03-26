@@ -594,7 +594,7 @@ void Settings::printUsage()
     cout << " -L, --localaddress                       Change default local host IP address (default: 127.0.0.1)" << endl;
     cout << " -D, --nojackportsconnect                 Don't connect default audio ports in jack" << endl;
     cout << " --bufstrategy     # (0, 1, 2)            Use alternative jitter buffer" << endl;
-    cout << " --broadcast <broadcast_queue>            Turn on broadcast output ports with extra queue (requires new jitter buffer)" << endl;
+    cout << " --broadcast <broadcast_queue>            Creates duplicate receive ports for each connected client that use the specified broadcast_queue length, to enable creating a broadcast output mix with added latency but less packet loss" << endl;
     cout << " --udprt                                  Use RT thread priority for network I/O" << endl;
     cout << endl;
     cout << "OPTIONAL SIGNAL PROCESSING: " << endl;
