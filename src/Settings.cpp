@@ -136,13 +136,13 @@ void Settings::parseInput(int argc, char** argv)
         // These options don't set a flag.
         {"numchannels", required_argument, NULL,
          'n'},  // Number of input and output channels
-#ifdef WAIR     // WAIR
+#ifdef WAIR
         {"wair", no_argument, NULL, 'w'},  // Run in LAIR mode, sets numnetrevchannels
         {"addcombfilterlength", required_argument, NULL,
          'N'},                                                 // added comb filter length
         {"combfilterfeedback", required_argument, NULL, 'H'},  // comb filter feedback
-#endif  // endwhere
-        {"server", no_argument, NULL, 's'},  // Run in P2P server mode
+#endif                                                         // endwhere
+        {"server", no_argument, NULL, 's'},                    // Run in P2P server mode
         {"client", required_argument, NULL,
          'c'},  // Run in P2P client mode, set server IP address
         {"localaddress", required_argument, NULL,
@@ -228,7 +228,7 @@ void Settings::parseInput(int argc, char** argv)
             //-------------------------------------------------------
             mClientRoomSize = atof(optarg);  // cmd line comb feedback adjustment
             break;
-#endif  // endwhere
+#endif             // endwhere
         case 's':  // Run in P2P server mode
             //-------------------------------------------------------
             mJackTripMode = JackTrip::SERVER;
@@ -683,7 +683,10 @@ void Settings::printUsage()
          << endl;
     cout << " --bufstrategy     # (0, 1, 2)            Use alternative jitter buffer"
          << endl;
-    cout << " --broadcast <broadcast_queue>            Duplicates receive ports for each connected client with the specified broadcast_queue length. Broadcast outputs have higher latency but less packet loss." << endl;
+    cout << " --broadcast <broadcast_queue>            Duplicates receive ports for each "
+            "connected client with the specified broadcast_queue length. Broadcast "
+            "outputs have higher latency but less packet loss."
+         << endl;
     cout << " --udprt                                  Use RT thread priority for "
             "network I/O"
          << endl;
